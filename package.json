@@ -9,9 +9,12 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@hookform/resolvers": "^7.0.5",
+    "daisyui": "^5.7.50",
     "next": "16.4.5",
     "react": "19.3.0",
-    "react-dom": "19.3.0"
+    "react-dom": "19.3.0",
+    "react-hook-form": "^7.91.0"
   },
   "devDependencies": {
     "@tailwindcss/turbopack": "^4",
