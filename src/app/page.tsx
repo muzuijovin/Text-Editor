@@ -30,7 +30,7 @@ export default function TextEditor() {
     if (from === "") return;
 
     // pecah text jadi array, spasi/enter tetap disimpan biar format nggak berubah
-    const words = getValues("text").trim().split(" ");
+    const words = getValues("text").split(" ");
 
     // ganti setiap word yang sama dengan "from" pakai splice
     for (let i = 0; i < words.length; i++) {
@@ -39,7 +39,7 @@ export default function TextEditor() {
       }
     }
 
-    setValue("text", words.join(""));
+    setValue("text", words.join(" "));
   };
 
   return (
@@ -56,14 +56,14 @@ export default function TextEditor() {
             <input
               ref={fromRef}
               type="text"
-              className="input w-full"
+              className="input w-full rounded-lg"
               placeholder="From"
               onChange={(e) => (e.target.value = e.target.value.replace(/\s/g, ""))}
             />
             <input
               ref={toRef}
               type="text"
-              className="input w-full"
+              className="input w-full rounded-lg"
               placeholder="To"
               onChange={(e) => (e.target.value = e.target.value.replace(/\s/g, ""))}
             />
@@ -79,14 +79,14 @@ export default function TextEditor() {
 
       <textarea
         {...register("text")}
-        className="textarea w-full h-72 mt-3 rounded-lg border-gray-300"
+        className="textarea w-full h-72 mt-5 rounded-lg border-gray-300"
         placeholder="Tulis sesuatu..."
       ></textarea>
 
-      <div className="mt-3 w-full rounded-lg p-2 text-sm border border-gray-300 bg-gray-50 whitespace-pre-wrap min-h-9">
+      <div className="mt-5 w-full rounded-lg p-2 text-sm border border-gray-300 bg-gray-50 whitespace-pre-wrap min-h-9">
         {text}
       </div>
-      <div className="mt-1 w-full rounded-lg p-2 text-sm border border-gray-300 bg-gray-50">
+      <div className="mt-2 w-full rounded-lg p-2 text-sm border border-gray-300 bg-gray-50">
         Word : {wordCount}
       </div>
     </div>
